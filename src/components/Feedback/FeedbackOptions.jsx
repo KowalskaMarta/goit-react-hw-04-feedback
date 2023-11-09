@@ -1,13 +1,14 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// // eslint-disable-next-line
-// import FeedbackStyle from '../Feedback/FeedbackStyle.module.css';
+
+import style from '../Feedback/FeedbackStyle.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <div>
     {options.map((option) => (
-      <button className="feedback-button"
+      <button className={style['feedback-button']}
         key={option}
         onClick={() => onLeaveFeedback(option)}
       >
@@ -17,9 +18,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   </div>
 );
 
-// FeedbackOptions.propTypes = {
-//   options: PropTypes.array.isRequired, 
-//   onLeaveFeedback: PropTypes.func.isRequired,
-// };
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired, 
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 
 export default FeedbackOptions;
